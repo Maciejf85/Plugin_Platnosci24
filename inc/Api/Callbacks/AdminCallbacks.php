@@ -23,4 +23,17 @@ public function gtwPrzelewy24AdminSection( $input )
   $value = esc_attr( get_option($name) );
   echo '<input type="text" class="'. $class .'" name="'. $name .'" value="'. $value .'" placeholder="' . $placeholder . '">';
  }
+
+ public function selectField($args)
+ {
+  $name = $args['label_for'];
+  $class = $args['class'];
+  $options = $args['options'];
+
+    echo '<select name="'. $name .'" class="'. $class .'">';
+    foreach($options as $key => $value){
+      echo '<option value="'. $key . '" ' . selected($key, get_option($name), false ) . '>'. $value . '</option>';
+    }
+    echo '</select>';       
+ }
 }

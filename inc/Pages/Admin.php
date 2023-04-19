@@ -57,6 +57,11 @@ public function setSettings(){
       'option_name' => 'gtw_p24CRC',
       'callback' => [$this->callbacks, 'gtwPrzelewy24InputSanitize' ],
     ],
+    [
+      'option_group' => 'gtw_przelewy24_plugin_settings',
+      'option_name' => 'gtw_p24Mode',
+      'callback' => [$this->callbacks, 'gtwPrzelewy24InputSanitize' ],
+    ],
   ];
 
   $this->settings->setSettings($args);
@@ -101,6 +106,21 @@ public function setFields(){
         'label_for' => 'gtw_p24CRC',
         'class' => 'regular-text',
         'placeholder' => ''
+      ],
+    ],
+    [
+      'id' => 'gtw_p24Mode',
+      'title' => 'Tryb działania',
+      'callback' => [$this->callbacks, 'selectField' ],
+      'page' => 'gtwprzelewy24',
+      'section' => 'gtw_przelewy24_admin_index',
+      'args' => [
+        'label_for' => 'gtw_p24Mode',
+        'class' => 'regular-text',
+        'options' => [
+          'sandbox' => 'testowy',
+          'secure' => 'normalny',
+        ]
       ],
     ],
   ];
