@@ -15,7 +15,9 @@ namespace Inc;
       Pages\Admin::class,
       Base\Enqueue::class,
       Base\SettingsLinks::class,
-      Api\SettingsApi::class
+      Api\SettingsApi::class,
+      Base\Methods::class
+
     ];
   }
 
