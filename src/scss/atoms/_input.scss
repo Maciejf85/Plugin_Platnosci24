@@ -1,0 +1,47 @@
+.wp-heading-inline {
+  margin-bottom: 30px !important;
+}
+
+.order-table {
+  border-collapse: collapse;
+  width: 100%;
+
+  &__caption {
+    background: #1d2327 !important;
+    color: white;
+    font-size: 12px;
+  }
+
+  th,
+  td {
+    padding: 5px 10px;
+  }
+
+  tr {
+    background: #ddd;
+  }
+
+  tr:nth-child(odd) {
+    background: white;
+  }
+}
+
+.payment-status {
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  color: #1d2327;
+  font-size: 14px;
+
+  &__btn {
+    padding: 5px 30px;
+    color: white;
+
+    &--active {
+      background-color: #00a331;
+    }
+    &--inactive {
+      background-color: #d63638;
+    }
+  }
+}

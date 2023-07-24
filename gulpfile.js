@@ -13,11 +13,11 @@ var gulp = require("gulp"),
   size = require("gulp-size"),
   sassGlob = require("gulp-sass-glob");
 
-var stylesWatchFile = "./src/scss/mystyle.scss";
+var stylesWatchFile = "./src/scss/*/**.scss";
 
 function styles() {
   return gulp
-    .src("./src/scss/mystyle.scss")
+    .src("./src/scss/main.scss")
     .pipe(sassGlob())
     .pipe(sass())
     .pipe(sourcemaps.init({ loadMaps: true }))

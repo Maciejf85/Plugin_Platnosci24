@@ -22,6 +22,15 @@ class ComposerStaticInita3d7f5dc821c0a08d8f4884ebfc906f6
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Inc\\Api\\Callbacks\\AdminCallbacks' => __DIR__ . '/../..' . '/inc/Api/Callbacks/AdminCallbacks.php',
+        'Inc\\Api\\SettingsApi' => __DIR__ . '/../..' . '/inc/Api/SettingsApi.php',
+        'Inc\\Base\\Activate' => __DIR__ . '/../..' . '/inc/Base/Activate.php',
+        'Inc\\Base\\Deactivate' => __DIR__ . '/../..' . '/inc/Base/Deactivate.php',
+        'Inc\\Base\\Enqueue' => __DIR__ . '/../..' . '/inc/Base/Enqueue.php',
+        'Inc\\Base\\Methods' => __DIR__ . '/../..' . '/inc/Base/Methods.php',
+        'Inc\\Base\\SettingsLinks' => __DIR__ . '/../..' . '/inc/Base/SettingsLinks.php',
+        'Inc\\Init' => __DIR__ . '/../..' . '/inc/Init.php',
+        'Inc\\Pages\\Admin' => __DIR__ . '/../..' . '/inc/Pages/Admin.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

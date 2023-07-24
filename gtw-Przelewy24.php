@@ -11,22 +11,23 @@
 * Domain Path: /languages
 */
 
-if(!defined('ABSPATH')){
+if (!defined('ABSPATH')) {
   die;
 }
 
-if ( ! function_exists('add_action')){
+if (!function_exists('add_action')) {
   exit;
 }
 
-if(file_exists( dirname(__FILE__) . '/vendor/autoload.php' )){
+if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
   require_once dirname(__FILE__) . '/vendor/autoload.php';
 }
 
 // Define CONSTANTS
-define( 'GTW_P24_PLUGIN_PATH', plugin_dir_path( (__FILE__) ) );
-define( 'GTW_P24_PLUGIN_URL', plugin_dir_url( (__FILE__) ) );
-define( 'GTW_P24_PLUGIN_BASENAME', plugin_basename( __FILE__) );
+define('GTW_P24_PLUGIN_PATH', plugin_dir_path((__FILE__)));
+define('GTW_P24_PLUGIN_URL', plugin_dir_url((__FILE__)));
+define('GTW_P24_PLUGIN_BASENAME', plugin_basename(__FILE__));
+define('GTW_P24_SITE_URL', get_home_url());
 
 use Inc\Base\Activate;
 use Inc\Base\Deactivate;
@@ -35,16 +36,16 @@ function activate_gtw_przelewy24_plugin()
 {
   Activate::activate();
 }
-register_activation_hook( __FILE__, 'activate_gtw_przelewy24_plugin' );
+register_activation_hook(__FILE__, 'activate_gtw_przelewy24_plugin');
 
 
 function deactivate_gtw_przelewy24_plugin()
 {
   Deactivate::deactivate();
 }
-register_deactivation_hook( __FILE__, 'deactivate_gtw_przelewy24_plugin' );
+register_deactivation_hook(__FILE__, 'deactivate_gtw_przelewy24_plugin');
 
 
-if(class_exists('Inc\\Init')){
+if (class_exists('Inc\\Init')) {
   Inc\Init::register_services();
 }

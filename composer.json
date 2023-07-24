@@ -1,7 +1,11 @@
 {
   "name": "maciejf85/gtw-przelewy24",
   "type": "project",
+  "description": "A plugin for integrating Wordpress with the Przelewy24 payment system",
   "license": "GPL",
+  "config": {
+    "optimize-autoloader": true
+  },
   "autoload": {
     "psr-4": {
       "Inc\\": "./inc"

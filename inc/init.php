@@ -3,20 +3,23 @@
 namespace Inc;
 
 
- final class Init
- {
+final class Init
+{
 
-/**
- * Store all the classes inside an array
- * @return array Full list of classes
- */
-  public static function get_services(){
+  /**
+   * Store all the classes inside an array
+   * @return array Full list of classes
+   */
+  public static function get_services()
+  {
     return [
       Pages\Admin::class,
       Base\Enqueue::class,
       Base\SettingsLinks::class,
       Api\SettingsApi::class,
-      Base\Methods::class
+      Base\Methods::class,
+      Api\DB\OrdersDatabase::class,
+      Api\Payments\Payment::class
 
     ];
   }
@@ -26,10 +29,11 @@ namespace Inc;
    * and call the register() method if it exists
    * @return
    */
-  public static function register_services(){
-    foreach( self::get_services() as $class){
+  public static function register_services()
+  {
+    foreach (self::get_services() as $class) {
       $service = self::instantiate($class);
-      if( method_exists($service, 'register'  )){
+      if (method_exists($service, 'register')) {
         $service->register();
       }
     }
@@ -40,8 +44,8 @@ namespace Inc;
    * @param class $class from the services array
    * @return class instance new instance of the class
    */
-  private static function instantiate( $class )
+  private static function instantiate($class)
   {
     return new $class();
   }
- }
+}
